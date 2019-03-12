@@ -51,7 +51,6 @@ class BaseHMC:
         is_cov=False,
         logp_dlogp_func=None,
             size=None,
-        blocked=True,
         potential=None,
         integrator="leapfrog",
         dtype=None,

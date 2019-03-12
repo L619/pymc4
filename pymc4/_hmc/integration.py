@@ -1,5 +1,5 @@
 from collections import namedtuple
-
+import tensorflow as tf
 from tensorflow.python.framework.ops import EagerTensor
 import numpy as np
 from scipy import linalg
@@ -64,10 +64,7 @@ class CpuLeapfrogIntegrator(object):
 
         q, p, v, q_grad, energy, logp = state
         if out is None:
-            if isinstance(q, EagerTensor):
-                q_new = q.numpy()
-            else:
-                q_new = q.copy()
+            q_new = q.copy()
             p_new = p.copy()
             v_new = np.empty_like(q)
             q_new_grad = np.empty_like(q)
